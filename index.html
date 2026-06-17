@@ -12,15 +12,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:       #0B1B2B;
-      --beige:      #EDEAE2;
-      --gold:       #AB845B;
-      --gold-light: #C4985F;
-      --rose:       #A88070;
-      --gray-beige: #C0B8A8;
-      --muted:      #4a5a6a;
-      --border:     #E2DDD6;
-      --light-bg:   #F5F3EF;
+      --navy:       #0F1C15;
+      --beige:      #F2EDE3;
+      --gold:       #B07240;
+      --gold-light: #C98C50;
+      --rose:       #9E7868;
+      --gray-beige: #B8AFA0;
+      --muted:      #3A4D40;
+      --border:     #DDD8CC;
+      --light-bg:   #F7F3EB;
       --white:      #ffffff;
     }
 
@@ -46,7 +46,7 @@
       transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
     }
     nav.scrolled {
-      background: rgba(11,27,43,0.94);
+      background: rgba(15,28,21,0.94);
       backdrop-filter: blur(12px);
       box-shadow: 0 1px 0 rgba(255,255,255,0.06);
     }
@@ -134,9 +134,9 @@
       inset: 0;
       background: linear-gradient(
         160deg,
-        rgba(11,27,43,0.5) 0%,
-        rgba(11,27,43,0.65) 55%,
-        rgba(11,27,43,0.9) 100%
+        rgba(15,28,21,0.5) 0%,
+        rgba(15,28,21,0.65) 55%,
+        rgba(15,28,21,0.9) 100%
       );
     }
     .hero-content {
@@ -156,12 +156,12 @@
     }
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
       color: var(--beige);
       font-weight: 400;
       line-height: 1.1;
       letter-spacing: 0.01em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.6rem;
     }
     .hero-typing-line {
       font-size: clamp(0.95rem, 2vw, 1.2rem);
@@ -211,18 +211,18 @@
     .btn-primary {
       display: inline-block;
       padding: 0.9rem 2.4rem;
-      background: var(--gold);
-      color: var(--white);
+      background: rgba(176,114,64,0.72);
+      color: var(--beige);
       text-decoration: none;
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      border: none;
+      border: 1px solid rgba(176,114,64,0.4);
       cursor: pointer;
       transition: background 0.25s, transform 0.2s;
     }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-primary:hover { background: rgba(176,114,64,0.88); transform: translateY(-1px); }
 
     .btn-outline {
       display: inline-block;
@@ -334,12 +334,12 @@
     .intro-pillars {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      border: 1px solid rgba(11,27,43,0.1);
+      border: 1px solid rgba(15,28,21,0.1);
     }
     .intro-pillar {
       padding: 1.6rem 1.4rem;
-      border-right: 1px solid rgba(11,27,43,0.1);
-      border-bottom: 1px solid rgba(11,27,43,0.1);
+      border-right: 1px solid rgba(15,28,21,0.1);
+      border-bottom: 1px solid rgba(15,28,21,0.1);
     }
     .intro-pillar:nth-child(2n) { border-right: none; }
     .intro-pillar:nth-last-child(-n+2) { border-bottom: none; }
@@ -361,7 +361,7 @@
     }
     .intro-pillar span {
       font-size: 0.82rem;
-      color: #6a7a8a;
+      color: #5A6B58;
       line-height: 1.6;
     }
 
@@ -381,7 +381,7 @@
       padding: 2.2rem;
       transition: background 0.22s;
     }
-    .service-card:hover { background: #fafaf7; }
+    .service-card:hover { background: #F5F1E8; }
     .svc-icon {
       width: 44px;
       height: 44px;
@@ -463,7 +463,7 @@
     }
     .price-card.featured {
       border-color: var(--gold);
-      box-shadow: 0 8px 40px rgba(11,27,43,0.1);
+      box-shadow: 0 8px 40px rgba(15,28,21,0.1);
     }
     .featured-badge {
       position: absolute;
@@ -509,7 +509,7 @@
     .price-amount strong { font-weight: 600; }
     .price-note {
       font-size: 0.76rem;
-      color: #8a9aaa;
+      color: #7A8A78;
       margin-bottom: 1.8rem;
     }
     .price-features {
@@ -521,7 +521,7 @@
       font-size: 0.875rem;
       color: var(--muted);
       padding: 0.5rem 0;
-      border-bottom: 1px solid #f0ede8;
+      border-bottom: 1px solid #E8E3D8;
       display: flex;
       align-items: flex-start;
       gap: 0.7rem;
@@ -530,7 +530,7 @@
     .price-features li svg { color: var(--gold); flex-shrink: 0; margin-top: 3px; }
     .price-disclaimer {
       font-size: 0.76rem;
-      color: #9aabb8;
+      color: #8A9A88;
       line-height: 1.6;
       padding-top: 1.2rem;
       border-top: 1px solid var(--border);
@@ -612,6 +612,26 @@
     .outcome-item svg { color: var(--gold); flex-shrink: 0; margin-top: 3px; }
     .outcome-item span { font-size: 0.84rem; color: var(--gray-beige); line-height: 1.55; }
 
+    /* ── ABOUT ────────────────────────────────────── */
+    #about { background: var(--beige); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      display: block;
+    }
+    .about-text h2 { margin-bottom: 1.4rem; }
+    .about-text p { margin-bottom: 1.1rem; color: var(--muted); }
+    .about-text p:last-of-type { margin-bottom: 2rem; }
+
     /* ── CONTACT ──────────────────────────────────── */
     #contact { background: var(--navy); }
     #contact h2 { color: var(--beige); }
@@ -623,7 +643,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       margin-top: 3.5rem;
-      align-items: start;
+      align-items: center;
     }
     .contact-left p {
       font-size: 0.95rem;
@@ -648,29 +668,21 @@
     }
     .contact-detail a:hover { color: var(--gold); }
 
-    .contact-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 2.8rem;
+    .contact-monitor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .contact-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--beige);
-      margin-bottom: 0.8rem;
-    }
-    .contact-box p {
-      font-size: 0.9rem;
-      color: var(--gray-beige);
-      line-height: 1.75;
-      margin-bottom: 2rem;
+    .contact-monitor svg {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
     }
 
     /* ── FOOTER ───────────────────────────────────── */
     footer {
-      background: #060f18;
-      color: #5a6a7a;
+      background: #060F0A;
+      color: #4A5A4A;
       text-align: center;
       padding: 2.2rem 1.5rem;
       font-size: 0.8rem;
@@ -712,8 +724,10 @@
       section { padding: 5rem 1.3rem; }
 
       .intro-grid,
+      .about-grid,
       .handover-grid,
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-monitor { display: none; }
 
       .hero-cta { flex-direction: column; align-items: center; }
       .hero-cta a { width: 100%; max-width: 260px; text-align: center; }
@@ -726,7 +740,7 @@
       .process-grid   { grid-template-columns: 1fr; }
       .intro-pillars  { grid-template-columns: 1fr; }
       .intro-pillar { border-right: none !important; }
-      .intro-pillar:nth-last-child(-n+2) { border-bottom: 1px solid rgba(11,27,43,0.1); }
+      .intro-pillar:nth-last-child(-n+2) { border-bottom: 1px solid rgba(15,28,21,0.1); }
       .intro-pillar:last-child { border-bottom: none !important; }
     }
 
@@ -755,6 +769,7 @@
     <li><a href="#services">Tjenester</a></li>
     <li><a href="#process">Prosess</a></li>
     <li><a href="#pricing">Priser</a></li>
+    <li><a href="#about">Om meg</a></li>
     <li><a href="#contact">Kontakt</a></li>
     <li class="nav-cta-item">
       <a href="mailto:post@haukenestechnologies.no" class="btn-primary" style="font-size:0.8rem;">Ta kontakt</a>
@@ -769,15 +784,13 @@
     autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Webutvikling for norske bedrifter</p>
     <h1 class="hero-title">Haukenes Technologies</h1>
     <p class="hero-typing-line" aria-hidden="true">
       <span class="hero-typing-prefix">—</span>
       <span id="typewriter-text"></span><span class="cursor"></span>
     </p>
     <p class="hero-sub">
-      Moderne og brukervennlige nettsider for små og mellomstore bedrifter –
-      med ryddig prosess, full dokumentasjon og komplett handover.
+      Moderne og brukervennlige nettsider for små og mellomstore bedrifter.
     </p>
     <div class="hero-cta">
       <a href="mailto:post@haukenestechnologies.no" class="btn-primary">Ta kontakt</a>
@@ -791,20 +804,17 @@
 <section id="intro">
   <div class="container">
     <p class="section-label">Hva vi hjelper med</p>
-    <h2>Nettsider som fungerer –<br>og som du forstår</h2>
+    <h2>Ny nettside til selskapet ditt?<br><span style="font-size:0.7em; font-style:italic;">Enkel, profesjonell og laget for å hjelpe kundene dine å forstå hva du tilbyr.</span></h2>
     <div class="intro-grid">
       <div class="intro-text">
         <p>
-          Haukenes Technologies lager moderne og brukervennlige nettsider for
-          små og mellomstore bedrifter. Vi er opptatt av en ryddig prosess,
-          tydelig kommunikasjon og at du sitter igjen med en løsning du
-          faktisk forstår og kan bruke.
+          Haukenes Technologies lager enkle og profesjonelle nettsider for små bedrifter
+          som vil fremstå bedre på nett.
         </p>
         <p>
-          Vi bruker oppdaterte verktøy og arbeidsmetoder for å jobbe effektivt –
-          det gjør prosessen raskere og gir deg mer igjen for pengene.
-          Det viktigste for oss er at du får en nettside som passer din bedrift,
-          ikke en generisk mal vi bare fyller inn.
+          Du får en ryddig prosess fra start til slutt, tydelig kommunikasjon underveis
+          og en nettside som er tilpasset bedriften din. Målet er at du sitter igjen med
+          en løsning som ser bra ut, fungerer godt og er enkel å forstå.
         </p>
         <p style="margin-top:2.2rem;">
           <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Ta en uforpliktende prat &rarr;</a>
@@ -1097,6 +1107,30 @@
   </div>
 </section>
 
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">Hvem er jeg</p>
+    <div class="about-grid">
+      <img src="public/assets/Haukenes.jpg" alt="Herman Haukenes" class="about-img" />
+      <div class="about-text">
+        <h2>Herman Haukenes</h2>
+        <p>
+          Jeg er en webutvikler med lidenskap for å lage enkle og profesjonelle nettsider
+          for små bedrifter. Jeg tror på at en god nettside ikke trenger å være komplisert –
+          den skal være tydelig, se bra ut og hjelpe kundene dine å forstå hva du tilbyr.
+        </p>
+        <p>
+          Jeg tar meg av hele prosessen – fra første samtale til ferdig nettside –
+          og sørger for at du alltid vet hva som skjer underveis. Ingen unødvendig
+          teknisk sjargong, bare resultater du kan se og bruke.
+        </p>
+        <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Ta kontakt &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -1113,12 +1147,39 @@
           <a href="mailto:post@haukenestechnologies.no">post@haukenestechnologies.no</a>
         </div>
       </div>
-      <div class="contact-box">
-        <h3>Send en uforpliktende henvendelse</h3>
-        <p>Fortell oss litt om hva du trenger. Vi svarer vanligvis innen én til to virkedager.</p>
-        <a href="mailto:post@haukenestechnologies.no?subject=Uforpliktende%20henvendelse%20-%20Haukenes%20Technologies" class="btn-primary">
-          Send e-post &rarr;
-        </a>
+      <div class="contact-monitor">
+        <svg viewBox="0 0 340 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Monitor frame -->
+          <rect x="10" y="8" width="320" height="210" rx="10" fill="#0A140E" stroke="#B07240" stroke-width="1.5"/>
+          <!-- Screen -->
+          <rect x="22" y="20" width="296" height="186" rx="5" fill="#060F0A"/>
+          <!-- Browser bar -->
+          <rect x="32" y="30" width="276" height="22" rx="4" fill="#0F1C15"/>
+          <circle cx="46" cy="41" r="3.5" fill="#B07240" opacity="0.45"/>
+          <circle cx="59" cy="41" r="3.5" fill="#B07240" opacity="0.28"/>
+          <circle cx="72" cy="41" r="3.5" fill="#B07240" opacity="0.16"/>
+          <rect x="86" y="37" width="170" height="8" rx="4" fill="#F2EDE3" opacity="0.07"/>
+          <!-- Hero block -->
+          <rect x="32" y="62" width="276" height="94" rx="3" fill="#0F1C15"/>
+          <!-- Headline lines -->
+          <rect x="52" y="82" width="148" height="9" rx="4" fill="#F2EDE3" opacity="0.55"/>
+          <rect x="52" y="99" width="108" height="9" rx="4" fill="#F2EDE3" opacity="0.3"/>
+          <!-- CTA button -->
+          <rect x="52" y="120" width="76" height="20" rx="4" fill="#B07240" opacity="0.75"/>
+          <!-- Content columns -->
+          <rect x="32" y="166" width="82" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
+          <rect x="32" y="179" width="60" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
+          <rect x="130" y="166" width="82" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
+          <rect x="130" y="179" width="60" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
+          <rect x="228" y="166" width="80" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
+          <rect x="228" y="179" width="55" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
+          <!-- Power LED -->
+          <circle cx="170" cy="212" r="2.5" fill="#B07240" opacity="0.85"/>
+          <!-- Stand neck -->
+          <rect x="153" y="218" width="34" height="42" rx="2" fill="#0A140E"/>
+          <!-- Stand base -->
+          <rect x="103" y="257" width="134" height="13" rx="6" fill="#0A140E" stroke="#B07240" stroke-width="1.2"/>
+        </svg>
       </div>
     </div>
   </div>
