@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haukenes Technologies — Nettsider for bedrifter</title>
-  <meta name="description" content="Haukenes Technologies lager moderne og brukervennlige nettsider for små og mellomstore bedrifter – med ryddig prosess, dokumentasjon og full handover." />
+  <title>Haukenes Technologies – Nettsider for bedrifter</title>
+  <meta name="description" content="Enkle og profesjonelle nettsider for små bedrifter. Tydelig prosess, fast pris og enkel overlevering." />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://haukenestech.no/" />
+  <meta property="og:title"       content="Haukenes Technologies – Nettsider for bedrifter" />
+  <meta property="og:description" content="Enkle og profesjonelle nettsider for små bedrifter." />
+  <meta property="og:image"       content="https://haukenestech.no/public/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Haukenes Technologies – Nettsider for bedrifter" />
+  <meta name="twitter:description" content="Enkle og profesjonelle nettsider for små bedrifter." />
+  <meta name="twitter:image"       content="https://haukenestech.no/public/og-image.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -322,49 +338,52 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
-      align-items: start;
-      margin-top: 3.5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .intro-text .intro-subtitle {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 1.8rem;
+      line-height: 1.7;
     }
     .intro-text p {
       color: var(--muted);
       line-height: 1.9;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
+      margin-bottom: 1.4rem;
+      font-size: 0.97rem;
     }
-    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-text p:last-of-type { margin-bottom: 2.2rem; }
 
-    .intro-pillars {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: 1px solid rgba(15,28,21,0.1);
+    .intro-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
     }
-    .intro-pillar {
-      padding: 1.6rem 1.4rem;
-      border-right: 1px solid rgba(15,28,21,0.1);
-      border-bottom: 1px solid rgba(15,28,21,0.1);
-    }
-    .intro-pillar:nth-child(2n) { border-right: none; }
-    .intro-pillar:nth-last-child(-n+2) { border-bottom: none; }
-    .pillar-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 0.45rem;
-    }
-    .intro-pillar strong {
+    .intro-visual svg {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
       display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--navy);
-      font-weight: 400;
-      margin-bottom: 0.35rem;
     }
-    .intro-pillar span {
-      font-size: 0.82rem;
-      color: #5A6B58;
-      line-height: 1.6;
+    .intro-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    .intro-chip {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--muted);
+      border: 1px solid rgba(15,28,21,0.18);
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      background: rgba(168,117,86,0.06);
     }
 
     /* ── SERVICES ─────────────────────────────────── */
@@ -740,10 +759,7 @@
     @media (max-width: 480px) {
       .services-grid  { grid-template-columns: 1fr; }
       .process-grid   { grid-template-columns: 1fr; }
-      .intro-pillars  { grid-template-columns: 1fr; }
-      .intro-pillar { border-right: none !important; }
-      .intro-pillar:nth-last-child(-n+2) { border-bottom: 1px solid rgba(15,28,21,0.1); }
-      .intro-pillar:last-child { border-bottom: none !important; }
+      .intro-chips { justify-content: flex-start; }
     }
 
     /* ── REDUCED MOTION ───────────────────────────── */
@@ -810,42 +826,76 @@
 <section id="intro">
   <div class="container">
     <p class="section-label">Hva vi hjelper med</p>
-    <h2>Ny nettside til selskapet ditt?<br><span style="font-size:0.7em; font-style:italic;">Enkel, profesjonell og laget for å hjelpe kundene dine å forstå hva du tilbyr.</span></h2>
     <div class="intro-grid">
       <div class="intro-text">
-        <p>
-          Haukenes Technologies lager enkle og profesjonelle nettsider for små bedrifter
-          som vil fremstå bedre på nett.
-        </p>
-        <p>
-          Du får en ryddig prosess fra start til slutt, tydelig kommunikasjon underveis
-          og en nettside som er tilpasset bedriften din. Målet er at du sitter igjen med
-          en løsning som ser bra ut, fungerer godt og er enkel å forstå.
-        </p>
-        <p style="margin-top:2.2rem;">
-          <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Ta en uforpliktende prat &rarr;</a>
-        </p>
+        <h2>Ny nettside til selskapet ditt?</h2>
+        <p class="intro-subtitle">Enkel, profesjonell og laget for å gjøre det lett for kundene dine å forstå hva du tilbyr.</p>
+        <p>Haukenes Technologies lager nettsider for små bedrifter som trenger en tydelig og ryddig digital tilstedeværelse.</p>
+        <p>Målet er enkelt: kundene dine skal raskt forstå hvem du er, hva du tilbyr og hvordan de tar kontakt.</p>
+        <p>Du får en nettside som ser profesjonell ut, er enkel å bruke og lett å videreføre.</p>
+        <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Ta en uforpliktende prat &rarr;</a>
       </div>
-      <div class="intro-pillars">
-        <div class="intro-pillar">
-          <div class="pillar-label">Tilnærming</div>
-          <strong>Skreddersydd</strong>
-          <span>Tilpasset din bedrift og dine kunder – ikke en generisk mal</span>
-        </div>
-        <div class="intro-pillar">
-          <div class="pillar-label">Pris</div>
-          <strong>Forutsigbar</strong>
-          <span>Faste pakkepriser gjør det enkelt å planlegge og budsjettere</span>
-        </div>
-        <div class="intro-pillar">
-          <div class="pillar-label">Prosess</div>
-          <strong>Ryddig</strong>
-          <span>Tydelig kommunikasjon og struktur gjennom hele prosjektet</span>
-        </div>
-        <div class="intro-pillar">
-          <div class="pillar-label">Leveranse</div>
-          <strong>Dokumentert</strong>
-          <span>Du forstår hva du har fått og kan drifte det videre selv</span>
+      <div class="intro-visual">
+        <svg viewBox="0 0 460 318" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Browser frame -->
+          <rect width="460" height="318" rx="8" fill="#0F1C15" stroke="#A87556" stroke-width="1.2"/>
+          <!-- Browser chrome -->
+          <rect width="460" height="38" rx="8" fill="#0A140E"/>
+          <rect y="30" width="460" height="8" fill="#0A140E"/>
+          <!-- Traffic lights -->
+          <circle cx="20" cy="19" r="5" fill="#A87556" opacity="0.55"/>
+          <circle cx="36" cy="19" r="5" fill="#A87556" opacity="0.3"/>
+          <circle cx="52" cy="19" r="5" fill="#A87556" opacity="0.18"/>
+          <!-- URL bar -->
+          <rect x="74" y="11" width="312" height="16" rx="8" fill="#0F1C15"/>
+          <rect x="86" y="17" width="120" height="4" rx="2" fill="#F2EDE3" opacity="0.2"/>
+
+          <!-- Nav bar inside page -->
+          <rect x="16" y="50" width="428" height="28" rx="2" fill="#0A140E" opacity="0.5"/>
+          <rect x="26" y="59" width="48" height="6" rx="3" fill="#F2EDE3" opacity="0.55"/>
+          <rect x="310" y="59" width="36" height="6" rx="3" fill="#F2EDE3" opacity="0.2"/>
+          <rect x="354" y="59" width="36" height="6" rx="3" fill="#F2EDE3" opacity="0.2"/>
+          <rect x="398" y="57" width="36" height="10" rx="2" fill="#A87556" opacity="0.55"/>
+
+          <!-- Hero headline -->
+          <rect x="26" y="96" width="200" height="12" rx="5" fill="#F2EDE3" opacity="0.75"/>
+          <rect x="26" y="115" width="154" height="10" rx="5" fill="#F2EDE3" opacity="0.4"/>
+          <!-- CTA button -->
+          <rect x="26" y="136" width="100" height="24" rx="3" fill="#A87556" opacity="0.65"/>
+          <rect x="38" y="144" width="76" height="8" rx="3" fill="#F2EDE3" opacity="0.7"/>
+
+          <!-- Divider -->
+          <line x1="16" y1="174" x2="444" y2="174" stroke="#A87556" stroke-width="0.6" opacity="0.25"/>
+
+          <!-- Three cards -->
+          <rect x="16" y="184" width="132" height="90" rx="4" fill="#0A140E" opacity="0.7"/>
+          <rect x="26" y="196" width="44" height="6" rx="3" fill="#A87556" opacity="0.65"/>
+          <rect x="26" y="210" width="108" height="5" rx="2.5" fill="#F2EDE3" opacity="0.35"/>
+          <rect x="26" y="222" width="88" height="5" rx="2.5" fill="#F2EDE3" opacity="0.22"/>
+          <rect x="26" y="234" width="96" height="5" rx="2.5" fill="#F2EDE3" opacity="0.14"/>
+          <rect x="26" y="250" width="60" height="14" rx="2" fill="#A87556" opacity="0.35"/>
+
+          <rect x="162" y="184" width="136" height="90" rx="4" fill="#0A140E" opacity="0.7"/>
+          <rect x="172" y="196" width="44" height="6" rx="3" fill="#A87556" opacity="0.65"/>
+          <rect x="172" y="210" width="112" height="5" rx="2.5" fill="#F2EDE3" opacity="0.35"/>
+          <rect x="172" y="222" width="92" height="5" rx="2.5" fill="#F2EDE3" opacity="0.22"/>
+          <rect x="172" y="234" width="100" height="5" rx="2.5" fill="#F2EDE3" opacity="0.14"/>
+          <rect x="172" y="250" width="60" height="14" rx="2" fill="#A87556" opacity="0.35"/>
+
+          <rect x="312" y="184" width="132" height="90" rx="4" fill="#0A140E" opacity="0.7"/>
+          <rect x="322" y="196" width="44" height="6" rx="3" fill="#A87556" opacity="0.65"/>
+          <rect x="322" y="210" width="108" height="5" rx="2.5" fill="#F2EDE3" opacity="0.35"/>
+          <rect x="322" y="222" width="88" height="5" rx="2.5" fill="#F2EDE3" opacity="0.22"/>
+          <rect x="322" y="234" width="96" height="5" rx="2.5" fill="#F2EDE3" opacity="0.14"/>
+          <rect x="322" y="250" width="60" height="14" rx="2" fill="#A87556" opacity="0.35"/>
+
+          <!-- Cursor -->
+          <polygon points="410,240 410,260 414,256 418,265 421,264 417,255 422,253" fill="#F2EDE3" opacity="0.55"/>
+        </svg>
+        <div class="intro-chips">
+          <span class="intro-chip">Tydelig informasjon</span>
+          <span class="intro-chip">Fast pris</span>
+          <span class="intro-chip">Enkel overlevering</span>
         </div>
       </div>
     </div>
