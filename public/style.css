@@ -35,6 +35,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.3rem 3rem;
+  padding-left: max(3rem, env(safe-area-inset-left));
+  padding-right: max(3rem, env(safe-area-inset-right));
   transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
 }
 nav.scrolled {
@@ -106,6 +108,7 @@ nav.scrolled {
 #hero {
   position: relative;
   height: 100vh;
+  height: 100svh; /* stable small viewport height — excludes browser chrome on iOS */
   min-height: 600px;
   display: flex;
   align-items: center;
@@ -614,26 +617,60 @@ footer a:hover { text-decoration: underline; }
 }
 
 @media (max-width: 768px) {
-  nav { padding: 1.1rem 1.5rem; }
+  nav {
+    padding: 1.1rem 1.5rem;
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
   .nav-links { display: none; }
   .nav-cta   { display: none; }
   .nav-toggle { display: flex; }
 
+  /*
+   * Menu-open: expand the fixed nav to full screen.
+   * This avoids the iOS Safari bug where position:fixed inside a fixed parent
+   * creates incorrect stacking and bleed-through.
+   */
+  nav.menu-open {
+    bottom: 0;
+    background: var(--navy) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Menu list fills the expanded nav using position:absolute */
   .nav-links.open {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     inset: 0;
-    background: var(--navy);
+    background: transparent;
     align-items: center;
     justify-content: center;
     gap: 2.8rem;
-    z-index: 99;
+    padding-top: 5rem;
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .nav-links.open a { font-size: 1.1rem; color: var(--beige); }
   .nav-cta-item { display: block; }
 
   section { padding: 5rem 1.3rem; }
+
+  /* Hero video: crop from bottom on portrait screens for better framing */
+  .hero-video { object-position: center 30%; }
+
+  /* Darker overlay on mobile — stable and controlled regardless of video frame */
+  .hero-overlay {
+    background: linear-gradient(
+      160deg,
+      rgba(15,28,21,0.72) 0%,
+      rgba(15,28,21,0.86) 55%,
+      rgba(15,28,21,0.97) 100%
+    );
+  }
 
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .contact-monitor { display: none; }

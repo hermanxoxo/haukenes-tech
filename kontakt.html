@@ -131,19 +131,35 @@
 
   const toggle = document.getElementById('nav-toggle');
   const links  = document.getElementById('nav-links');
+  let savedScrollY = 0;
+
+  function openMenu() {
+    savedScrollY = window.scrollY;
+    links.classList.add('open');
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    nav.classList.add('menu-open');
+    document.body.style.position = 'fixed';
+    document.body.style.top      = `-${savedScrollY}px`;
+    document.body.style.width    = '100%';
+  }
+
+  function closeMenu() {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('menu-open');
+    document.body.style.position = '';
+    document.body.style.top      = '';
+    document.body.style.width    = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
   toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+    if (links.classList.contains('open')) closeMenu(); else openMenu();
   });
   links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+    a.addEventListener('click', closeMenu);
   });
 </script>
 </body>
