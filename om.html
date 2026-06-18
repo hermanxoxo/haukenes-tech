@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Om – Haukenes Technologies</title>
+  <meta name="description" content="Herman Haukenes lager enkle og profesjonelle nettsider for små bedrifter. Les mer om hvem som står bak Haukenes Technologies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="public/style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="nav-logo">Haukenes Technologies</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Meny" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/">Hjem</a></li>
+    <li><a href="priser.html">Priser</a></li>
+    <li><a href="om.html">Om</a></li>
+    <li><a href="/#contact">Kontakt</a></li>
+    <li class="nav-cta-item">
+      <a href="mailto:post@haukenestechnologies.no" class="btn-primary" style="font-size:0.8rem;">Ta kontakt</a>
+    </li>
+  </ul>
+  <a href="mailto:post@haukenestechnologies.no" class="nav-cta">Ta kontakt</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <p class="section-label">Hvem er jeg</p>
+    <h1>Herman Haukenes</h1>
+    <p>Webutvikler med lidenskap for enkle, profesjonelle nettsider for norske småbedrifter.</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <img src="public/assets/Haukenes.jpg" alt="Herman Haukenes" class="about-img" />
+      <div class="about-text">
+        <h2>Herman Haukenes</h2>
+        <p>
+          Jeg er en webutvikler med lidenskap for å lage enkle og profesjonelle nettsider
+          for små bedrifter. Jeg tror på at en god nettside ikke trenger å være komplisert –
+          den skal være tydelig, se bra ut og hjelpe kundene dine å forstå hva du tilbyr.
+        </p>
+        <p>
+          Jeg tar meg av hele prosessen – fra første samtale til ferdig nettside –
+          og sørger for at du alltid vet hva som skjer underveis. Ingen unødvendig
+          teknisk sjargong, bare resultater du kan se og bruke.
+        </p>
+        <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Ta kontakt &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    &copy; 2026 Haukenes Technologies &nbsp;&middot;&nbsp;
+    <a href="mailto:post@haukenestechnologies.no">post@haukenestechnologies.no</a>
+  </p>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const updateNav = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  updateNav();
+  window.addEventListener('scroll', updateNav, { passive: true });
+
+  const toggle = document.getElementById('nav-toggle');
+  const links  = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
