@@ -44,16 +44,48 @@
   <div class="container">
     <p class="section-label">Kom i gang</p>
     <h2>Har du en idé til en nettside<br>eller digital løsning?</h2>
-    <p class="lead">Send en uforpliktende henvendelse. Vi svarer raskt og forteller deg ærlig hva vi tror passer best for deg.</p>
+    <p class="lead">Send en uforpliktende henvendelse, så finner vi ut hva som passer best for deg.</p>
     <div class="contact-grid">
       <div class="contact-left">
-        <p>Det er ingen skjema å fylle ut og ingen forpliktelser. Send oss en e-post med litt om hva du tenker, så tar vi det derfra.</p>
+        <p>Du trenger ikke ha alt klart. Skriv kort hvem du er, hva du vurderer og hvilken pakke du tror passer best.</p>
         <div class="contact-detail">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
           </svg>
           <a href="mailto:post@haukenestechnologies.no">post@haukenestechnologies.no</a>
         </div>
+        <div class="contact-detail">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 12 19.79 19.79 0 0 1 1.08 3.42 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <a href="tel:+4746784120">46 78 41 20</a>
+        </div>
+        <!-- Sett inn form action når form-handler er klar (f.eks. Formspree: action="https://formspree.io/f/din-id") -->
+        <form class="contact-form" action="mailto:post@haukenestechnologies.no" method="POST" enctype="text/plain">
+          <div class="form-group">
+            <label for="knt-name">Hvem er du?</label>
+            <input type="text" id="knt-name" name="name" placeholder="Navn eller bedrift" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="knt-email">E-post</label>
+            <input type="email" id="knt-email" name="email" placeholder="din@epost.no" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="knt-package">Ønsket pakke</label>
+            <select id="knt-package" name="package">
+              <option value="">Velg pakke...</option>
+              <option value="Enkel nettside">Enkel nettside</option>
+              <option value="Komplett nettside">Komplett nettside</option>
+              <option value="Premium løsning">Premium løsning</option>
+              <option value="Usikker / ønsker anbefaling">Usikker / ønsker anbefaling</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="knt-message">Kommentar</label>
+            <textarea id="knt-message" name="message" placeholder="Skriv kort hva du trenger..."></textarea>
+          </div>
+          <button type="submit" class="contact-submit">Send henvendelse</button>
+        </form>
       </div>
       <div class="contact-monitor">
         <svg viewBox="0 0 340 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
