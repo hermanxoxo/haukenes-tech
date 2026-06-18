@@ -524,90 +524,88 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 3.5rem;
-      align-items: start;
+      align-items: stretch;
     }
     .price-card {
       background: var(--white);
-      padding: 2.4rem 2.2rem;
       border: 1px solid var(--border);
-      position: relative;
+      border-radius: 3px;
+      padding: 2.4rem 2.2rem 2.2rem;
       display: flex;
       flex-direction: column;
     }
     .price-card.featured {
+      background: #F0E9DE;
       border-color: var(--gold);
-      box-shadow: 0 8px 40px rgba(15,28,21,0.1);
-    }
-    .featured-badge {
-      position: absolute;
-      top: -1px; right: -1px;
-      background: var(--gold);
-      color: var(--white);
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.9rem;
+      box-shadow: 0 6px 32px rgba(15,28,21,0.09);
     }
     .card-tier {
-      font-size: 0.66rem;
-      letter-spacing: 0.15em;
+      font-size: 0.63rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
       color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 0.55rem;
+    }
+    .price-card.featured .card-tier {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      padding: 0.25rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
     }
     .price-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
       font-weight: 400;
       color: var(--navy);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
     }
     .price-for {
       font-size: 0.84rem;
       color: var(--muted);
       line-height: 1.65;
-      padding-bottom: 1.4rem;
+      padding-bottom: 1.2rem;
       border-bottom: 1px solid var(--border);
       margin-bottom: 1.4rem;
     }
     .price-amount {
-      font-size: 1.9rem;
+      font-size: 2rem;
       font-weight: 300;
       color: var(--navy);
       letter-spacing: -0.02em;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.15rem;
     }
     .price-amount strong { font-weight: 600; }
     .price-note {
-      font-size: 0.76rem;
+      font-size: 0.73rem;
       color: #7A8A78;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.6rem;
     }
     .price-features {
       list-style: none;
-      margin-bottom: 1.8rem;
       flex: 1;
+      margin-bottom: 1.4rem;
     }
     .price-features li {
-      font-size: 0.875rem;
+      font-size: 0.87rem;
       color: var(--muted);
-      padding: 0.5rem 0;
+      padding: 0.48rem 0;
       border-bottom: 1px solid #E8E3D8;
       display: flex;
       align-items: flex-start;
-      gap: 0.7rem;
+      gap: 0.65rem;
     }
     .price-features li:last-child { border-bottom: none; }
     .price-features li svg { color: var(--gold); flex-shrink: 0; margin-top: 3px; }
     .price-disclaimer {
-      font-size: 0.76rem;
+      font-size: 0.73rem;
       color: #8A9A88;
       line-height: 1.6;
-      padding-top: 1.2rem;
+      padding-top: 1rem;
       border-top: 1px solid var(--border);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.6rem;
     }
 
     /* ── HANDOVER ─────────────────────────────────── */
@@ -1181,58 +1179,57 @@
   <div class="container">
     <p class="section-label">Pakker og priser</p>
     <h2>Hva koster det?</h2>
-    <p class="lead">Faste pakkepriser gjør det enkelt å planlegge. Endelig pris avtales etter en innledende samtale om hva du trenger.</p>
+    <p class="lead">Velg en løsning som passer behovet ditt. Enkle og tydelige pakker gjør det lettere å komme i gang.</p>
     <div class="pricing-grid">
 
       <div class="price-card">
         <div class="card-tier">Kom i gang</div>
         <h3>Enkel nettside</h3>
-        <p class="price-for">Passer for deg som trenger en enkel og profesjonell tilstedeværelse på nett – uten unødvendig kompleksitet.</p>
+        <p class="price-for">For deg som trenger en enkel og profesjonell nettside for å være synlig på nett.</p>
         <div class="price-amount">fra <strong>3 500</strong> kr</div>
         <p class="price-note">Veiledende pris ekskl. mva.</p>
         <ul class="price-features">
           <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Én side / landingsside</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tilpasset tekst og innholdsstruktur</li>
           <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mobiltilpasset design</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tilpasset innhold og struktur</li>
           <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Publisering inkludert</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Enkel gjennomgang ved leveranse</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Enkel gjennomgang ved levering</li>
         </ul>
-        <p class="price-disclaimer">Endringer utover avtalt omfang faktureres separat. Domene og hosting avtales ved behov.</p>
+        <p class="price-disclaimer">Domene, hosting og endringer utover avtalt omfang avtales separat.</p>
         <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Kom i gang</a>
       </div>
 
       <div class="price-card featured">
-        <div class="featured-badge">Mest valgt</div>
         <div class="card-tier">Anbefalt</div>
         <h3>Komplett nettside</h3>
-        <p class="price-for">Passer for deg som ønsker en mer fullverdig nettside med flere seksjoner, funksjonalitet og en grundig leveranse.</p>
+        <p class="price-for">For deg som vil ha en mer komplett nettside med flere seksjoner og en tydeligere presentasjon.</p>
         <div class="price-amount">fra <strong>5 500</strong> kr</div>
         <p class="price-note">Veiledende pris ekskl. mva.</p>
         <ul class="price-features">
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flere seksjoner og undersider</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tydelig innholdsstruktur og design</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flere seksjoner eller undersider</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tydelig struktur og design</li>
           <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kontaktskjema eller enkel funksjonalitet</li>
           <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Grunnleggende SEO-oppsett</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dokumentasjon og grundig handover</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dokumentasjon og handover</li>
         </ul>
-        <p class="price-disclaimer">Endringer utover avtalt omfang faktureres separat. Domene og hosting avtales ved behov.</p>
+        <p class="price-disclaimer">Domene, hosting og endringer utover avtalt omfang avtales separat.</p>
         <a href="mailto:post@haukenestechnologies.no" class="btn-primary">Kom i gang</a>
       </div>
 
       <div class="price-card">
         <div class="card-tier">Skreddersydd</div>
         <h3>Premium løsning</h3>
-        <p class="price-for">Passer for deg som trenger mer tilpasning, spesifikk funksjonalitet eller integrasjoner mot andre systemer.</p>
+        <p class="price-for">For deg som trenger mer tilpasning, ekstra funksjonalitet eller integrasjoner.</p>
         <div class="price-amount">fra <strong>8 500</strong> kr</div>
         <p class="price-note">Veiledende pris ekskl. mva.</p>
         <ul class="price-features">
           <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mer skreddersydd løsning</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flere funksjoner og sider</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Integrasjoner der det er relevant</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ekstra tilpasninger etter behov</li>
-          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dokumentasjon, opplæring og handover</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flere sider og funksjoner</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Integrasjoner ved behov</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ekstra tilpasninger</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dokumentasjon og handover</li>
         </ul>
-        <p class="price-disclaimer">Pris avtales etter innledende samtale. Kompleksitet og omfang avgjør endelig kostnad.</p>
+        <p class="price-disclaimer">Endelig pris avtales etter behov og omfang.</p>
         <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Ta kontakt</a>
       </div>
 
