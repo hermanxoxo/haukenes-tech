@@ -28,16 +28,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:       #0F1C15;
-      --beige:      #F2EDE3;
-      --gold:       #A87556;
-      --gold-light: #C08D6E;
-      --rose:       #9E7868;
-      --gray-beige: #B8AFA0;
-      --muted:      #3A4D40;
-      --border:     #DDD8CC;
-      --light-bg:   #F7F3EB;
-      --white:      #ffffff;
+      --navy:         #0F1C15;
+      --beige:        #F2EDE3;
+      --gold:         #A87556;
+      --gold-light:   #C08D6E;
+      --rose:         #9E7868;
+      --gray-beige:   #B8AFA0;
+      --muted:        #3A4D40;
+      --border:       #DDD8CC;
+      --light-bg:     #F7F3EB;
+      --white:        #ffffff;
+      --tier-bronze:  #9E6B3A;
+      --tier-silver:  #7A8E88;
+      --tier-gold:    #9A841E;
     }
 
     html { scroll-behavior: smooth; }
@@ -430,38 +433,84 @@
     #process { background: var(--navy); }
     #process h2 { color: var(--beige); }
     #process .section-label { color: var(--rose); }
-    #process .lead { color: var(--gray-beige); max-width: 560px; }
+    #process .lead { color: var(--gray-beige); max-width: 620px; }
 
-    .process-grid {
+    .tier-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 56px 1fr 56px 1fr;
+      align-items: start;
       margin-top: 4rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-left: 1px solid rgba(255,255,255,0.08);
+      gap: 0;
     }
-    .step {
-      padding: 2.4rem 2rem;
-      border-right: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+    .tier-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 88px;
     }
-    .step-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      color: rgba(171,132,91,0.22);
-      line-height: 1;
-      margin-bottom: 1rem;
+    .tier-connector svg {
+      opacity: 0.28;
     }
-    .step h3 {
-      font-size: 0.93rem;
+    .tier-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+    }
+    .tier-monitor {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      display: block;
+      transition: transform 0.28s ease, filter 0.28s ease;
+    }
+    .tier-card:hover .tier-monitor {
+      transform: translateY(-5px);
+      filter: brightness(1.1);
+    }
+    .tier-badge {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       font-weight: 600;
-      color: var(--beige);
-      margin-bottom: 0.55rem;
-      letter-spacing: 0.02em;
+      padding: 0.3rem 1rem;
+      border-radius: 2px;
     }
-    .step p {
+    .tier-card--bronze .tier-badge {
+      color: var(--tier-bronze);
+      border: 1px solid rgba(158,107,58,0.45);
+      background: rgba(158,107,58,0.07);
+    }
+    .tier-card--silver .tier-badge {
+      color: var(--tier-silver);
+      border: 1px solid rgba(122,142,136,0.45);
+      background: rgba(122,142,136,0.07);
+    }
+    .tier-card--gold .tier-badge {
+      color: var(--tier-gold);
+      border: 1px solid rgba(154,132,30,0.45);
+      background: rgba(154,132,30,0.07);
+    }
+    .tier-info { text-align: center; max-width: 260px; }
+    .tier-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--beige);
+      margin-bottom: 0.3rem;
+    }
+    .tier-info h4 {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-beige);
+      margin-bottom: 0.9rem;
+    }
+    .tier-info p {
       font-size: 0.855rem;
       color: var(--gray-beige);
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
     /* ── PRICING ──────────────────────────────────── */
@@ -719,7 +768,8 @@
 
     @media (max-width: 900px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-grid  { grid-template-columns: repeat(2, 1fr); }
+      .tier-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .tier-connector { display: none; }
     }
 
     @media (max-width: 768px) {
@@ -758,7 +808,6 @@
 
     @media (max-width: 480px) {
       .services-grid  { grid-template-columns: 1fr; }
-      .process-grid   { grid-template-columns: 1fr; }
       .intro-chips { justify-content: flex-start; }
     }
 
@@ -978,39 +1027,156 @@
 <section id="process">
   <div class="container">
     <p class="section-label">Slik jobber vi</p>
-    <h2>En ryddig prosess<br>fra start til mål</h2>
-    <p class="lead">Du vet alltid hvor vi er i prosjektet. Ingen overraskelser, ingen unødvendig kompleksitet.</p>
-    <div class="process-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Kartlegging</h3>
-        <p>Vi starter med en uforpliktende samtale om hva du trenger, hvem kundene dine er og hvilket inntrykk du ønsker å gi.</p>
+    <h2>Fra første utkast til ferdig nettside</h2>
+    <p class="lead">Prosessen er enkel og ryddig. Du får først et utkast, deretter en forbedret versjon basert på dine tilbakemeldinger, før siden ferdigstilles og leveres.</p>
+
+    <div class="tier-grid">
+
+      <!-- BRONSE -->
+      <div class="tier-card tier-card--bronze">
+        <svg class="tier-monitor" viewBox="0 0 280 225" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="2" width="278" height="174" rx="7" fill="#100C08" stroke="#9E6B3A" stroke-width="1.4"/>
+          <rect x="1" y="2" width="278" height="30" rx="7" fill="#0A0806"/>
+          <rect x="1" y="24" width="278" height="8" fill="#0A0806"/>
+          <circle cx="18" cy="17" r="4.5" fill="#9E6B3A" opacity="0.5"/>
+          <circle cx="32" cy="17" r="4.5" fill="#9E6B3A" opacity="0.28"/>
+          <circle cx="46" cy="17" r="4.5" fill="#9E6B3A" opacity="0.16"/>
+          <rect x="68" y="10" width="144" height="14" rx="7" fill="#0F1C15" opacity="0.9"/>
+          <rect x="78" y="15" width="80" height="4" rx="2" fill="#F2EDE3" opacity="0.12"/>
+          <rect x="14" y="40" width="252" height="18" rx="2" fill="#0A0806" opacity="0.7"/>
+          <rect x="22" y="47" width="36" height="5" rx="2" fill="#F2EDE3" opacity="0.45"/>
+          <rect x="186" y="47" width="22" height="5" rx="2" fill="#F2EDE3" opacity="0.15"/>
+          <rect x="214" y="47" width="22" height="5" rx="2" fill="#F2EDE3" opacity="0.15"/>
+          <rect x="242" y="45" width="24" height="9" rx="2" fill="#9E6B3A" opacity="0.45"/>
+          <rect x="14" y="66" width="252" height="52" rx="2" fill="#0A0806" opacity="0.4"/>
+          <rect x="22" y="76" width="140" height="9" rx="4" fill="#F2EDE3" opacity="0.65"/>
+          <rect x="22" y="92" width="100" height="7" rx="3" fill="#F2EDE3" opacity="0.3"/>
+          <rect x="22" y="108" width="68" height="16" rx="3" fill="#9E6B3A" opacity="0.55"/>
+          <rect x="32" y="114" width="48" height="5" rx="2" fill="#F2EDE3" opacity="0.6"/>
+          <line x1="14" y1="130" x2="266" y2="130" stroke="#9E6B3A" stroke-width="0.7" opacity="0.22"/>
+          <rect x="14" y="136" width="74" height="32" rx="3" fill="#0A0806" opacity="0.65"/>
+          <rect x="22" y="143" width="36" height="5" rx="2" fill="#9E6B3A" opacity="0.55"/>
+          <rect x="22" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.25"/>
+          <rect x="103" y="136" width="74" height="32" rx="3" fill="#0A0806" opacity="0.65"/>
+          <rect x="111" y="143" width="36" height="5" rx="2" fill="#9E6B3A" opacity="0.55"/>
+          <rect x="111" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.25"/>
+          <rect x="192" y="136" width="74" height="32" rx="3" fill="#0A0806" opacity="0.65"/>
+          <rect x="200" y="143" width="36" height="5" rx="2" fill="#9E6B3A" opacity="0.55"/>
+          <rect x="200" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.25"/>
+          <rect x="126" y="176" width="28" height="28" rx="2" fill="#0A0806"/>
+          <rect x="88" y="202" width="104" height="11" rx="5" fill="#0A0806" stroke="#9E6B3A" stroke-width="1" opacity="0.7"/>
+        </svg>
+        <span class="tier-badge">Bronse</span>
+        <div class="tier-info">
+          <h3>Første utkast</h3>
+          <h4>Steg 1</h4>
+          <p>Vi lager et første utkast basert på spørreskjema, samtaler, tilsendte bilder, integrasjoner og ønskede farger. Målet er å gi deg et konkret utgangspunkt å vurdere.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Struktur og innhold</h3>
-        <p>Vi lager en tydelig plan for hva siden skal inneholde, hvordan det er organisert og hva som er viktigst å formidle.</p>
+
+      <!-- CONNECTOR 1 -->
+      <div class="tier-connector">
+        <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+          <line x1="0" y1="8" x2="26" y2="8" stroke="#F2EDE3" stroke-width="1.2"/>
+          <polyline points="20,3 28,8 20,13" stroke="#F2EDE3" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+        </svg>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Designretning</h3>
-        <p>Vi finner en visuell retning som passer din bedrift og dine kunder – enkel, ryddig og profesjonell.</p>
+
+      <!-- SØLV -->
+      <div class="tier-card tier-card--silver">
+        <svg class="tier-monitor" viewBox="0 0 280 225" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="2" width="278" height="174" rx="7" fill="#0C1110" stroke="#7A8E88" stroke-width="1.4"/>
+          <rect x="1" y="2" width="278" height="30" rx="7" fill="#080D0C"/>
+          <rect x="1" y="24" width="278" height="8" fill="#080D0C"/>
+          <circle cx="18" cy="17" r="4.5" fill="#7A8E88" opacity="0.5"/>
+          <circle cx="32" cy="17" r="4.5" fill="#7A8E88" opacity="0.28"/>
+          <circle cx="46" cy="17" r="4.5" fill="#7A8E88" opacity="0.16"/>
+          <rect x="68" y="10" width="144" height="14" rx="7" fill="#0F1C15" opacity="0.9"/>
+          <rect x="78" y="15" width="80" height="4" rx="2" fill="#F2EDE3" opacity="0.12"/>
+          <rect x="14" y="40" width="252" height="18" rx="2" fill="#080D0C" opacity="0.7"/>
+          <rect x="22" y="47" width="36" height="5" rx="2" fill="#F2EDE3" opacity="0.45"/>
+          <rect x="186" y="47" width="22" height="5" rx="2" fill="#F2EDE3" opacity="0.15"/>
+          <rect x="214" y="47" width="22" height="5" rx="2" fill="#F2EDE3" opacity="0.15"/>
+          <rect x="242" y="45" width="24" height="9" rx="2" fill="#7A8E88" opacity="0.45"/>
+          <rect x="14" y="66" width="252" height="52" rx="2" fill="#080D0C" opacity="0.4"/>
+          <rect x="22" y="76" width="140" height="9" rx="4" fill="#F2EDE3" opacity="0.65"/>
+          <rect x="22" y="92" width="100" height="7" rx="3" fill="#F2EDE3" opacity="0.3"/>
+          <rect x="22" y="108" width="68" height="16" rx="3" fill="#7A8E88" opacity="0.55"/>
+          <rect x="32" y="114" width="48" height="5" rx="2" fill="#F2EDE3" opacity="0.6"/>
+          <line x1="14" y1="130" x2="266" y2="130" stroke="#7A8E88" stroke-width="0.7" opacity="0.22"/>
+          <rect x="14" y="136" width="74" height="32" rx="3" fill="#080D0C" opacity="0.65"/>
+          <rect x="22" y="143" width="36" height="5" rx="2" fill="#7A8E88" opacity="0.55"/>
+          <rect x="22" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.25"/>
+          <rect x="103" y="136" width="74" height="32" rx="3" fill="#080D0C" opacity="0.65"/>
+          <rect x="111" y="143" width="36" height="5" rx="2" fill="#7A8E88" opacity="0.55"/>
+          <rect x="111" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.25"/>
+          <rect x="192" y="136" width="74" height="32" rx="3" fill="#080D0C" opacity="0.65"/>
+          <rect x="200" y="143" width="36" height="5" rx="2" fill="#7A8E88" opacity="0.55"/>
+          <rect x="200" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.25"/>
+          <rect x="126" y="176" width="28" height="28" rx="2" fill="#080D0C"/>
+          <rect x="88" y="202" width="104" height="11" rx="5" fill="#080D0C" stroke="#7A8E88" stroke-width="1" opacity="0.7"/>
+        </svg>
+        <span class="tier-badge">Sølv</span>
+        <div class="tier-info">
+          <h3>Justert versjon</h3>
+          <h4>Steg 2</h4>
+          <p>Vi lager en ny versjon basert på tilbakemeldingene dine fra bronseleveransen. Struktur, tekst, bilder og visuelt uttrykk justeres slik at siden treffer bedre.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h3>Utvikling</h3>
-        <p>Nettsiden utvikles med fokus på kvalitet, ytelse og at resultatet fungerer godt på alle enheter.</p>
+
+      <!-- CONNECTOR 2 -->
+      <div class="tier-connector">
+        <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+          <line x1="0" y1="8" x2="26" y2="8" stroke="#F2EDE3" stroke-width="1.2"/>
+          <polyline points="20,3 28,8 20,13" stroke="#F2EDE3" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+        </svg>
       </div>
-      <div class="step">
-        <div class="step-num">05</div>
-        <h3>Testing og justering</h3>
-        <p>Vi gjennomgår løsningen grundig på mobil, nettbrett og desktop. Du gir tilbakemelding – vi justerer.</p>
+
+      <!-- GULL -->
+      <div class="tier-card tier-card--gold">
+        <svg class="tier-monitor" viewBox="0 0 280 225" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="2" width="278" height="174" rx="7" fill="#100F08" stroke="#9A841E" stroke-width="1.4"/>
+          <rect x="1" y="2" width="278" height="30" rx="7" fill="#0A0906"/>
+          <rect x="1" y="24" width="278" height="8" fill="#0A0906"/>
+          <circle cx="18" cy="17" r="4.5" fill="#9A841E" opacity="0.5"/>
+          <circle cx="32" cy="17" r="4.5" fill="#9A841E" opacity="0.28"/>
+          <circle cx="46" cy="17" r="4.5" fill="#9A841E" opacity="0.16"/>
+          <rect x="68" y="10" width="144" height="14" rx="7" fill="#0F1C15" opacity="0.9"/>
+          <rect x="78" y="15" width="80" height="4" rx="2" fill="#F2EDE3" opacity="0.12"/>
+          <rect x="14" y="40" width="252" height="18" rx="2" fill="#0A0906" opacity="0.7"/>
+          <rect x="22" y="47" width="36" height="5" rx="2" fill="#F2EDE3" opacity="0.55"/>
+          <rect x="186" y="47" width="22" height="5" rx="2" fill="#F2EDE3" opacity="0.2"/>
+          <rect x="214" y="47" width="22" height="5" rx="2" fill="#F2EDE3" opacity="0.2"/>
+          <rect x="242" y="45" width="24" height="9" rx="2" fill="#9A841E" opacity="0.55"/>
+          <rect x="14" y="66" width="252" height="52" rx="2" fill="#0A0906" opacity="0.4"/>
+          <rect x="22" y="76" width="140" height="9" rx="4" fill="#F2EDE3" opacity="0.75"/>
+          <rect x="22" y="92" width="100" height="7" rx="3" fill="#F2EDE3" opacity="0.4"/>
+          <rect x="22" y="108" width="68" height="16" rx="3" fill="#9A841E" opacity="0.65"/>
+          <rect x="32" y="114" width="48" height="5" rx="2" fill="#F2EDE3" opacity="0.7"/>
+          <line x1="14" y1="130" x2="266" y2="130" stroke="#9A841E" stroke-width="0.7" opacity="0.28"/>
+          <rect x="14" y="136" width="74" height="32" rx="3" fill="#0A0906" opacity="0.7"/>
+          <rect x="22" y="143" width="36" height="5" rx="2" fill="#9A841E" opacity="0.65"/>
+          <rect x="22" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.35"/>
+          <rect x="103" y="136" width="74" height="32" rx="3" fill="#0A0906" opacity="0.7"/>
+          <rect x="111" y="143" width="36" height="5" rx="2" fill="#9A841E" opacity="0.65"/>
+          <rect x="111" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.35"/>
+          <rect x="192" y="136" width="74" height="32" rx="3" fill="#0A0906" opacity="0.7"/>
+          <rect x="200" y="143" width="36" height="5" rx="2" fill="#9A841E" opacity="0.65"/>
+          <rect x="200" y="153" width="58" height="4" rx="2" fill="#F2EDE3" opacity="0.35"/>
+          <!-- Checkmark on gold screen -->
+          <circle cx="236" cy="106" r="12" fill="#9A841E" opacity="0.18"/>
+          <polyline points="230,106 234,111 243,100" stroke="#9A841E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <rect x="126" y="176" width="28" height="28" rx="2" fill="#0A0906"/>
+          <rect x="88" y="202" width="104" height="11" rx="5" fill="#0A0906" stroke="#9A841E" stroke-width="1" opacity="0.8"/>
+        </svg>
+        <span class="tier-badge">Gull</span>
+        <div class="tier-info">
+          <h3>Ferdig leveranse</h3>
+          <h4>Steg 3</h4>
+          <p>Siste finish gjøres, nettsiden ferdigstilles og klargjøres for publisering. Handover og dokumentasjon leveres til kunden, og faktura sendes.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">06</div>
-        <h3>Handover</h3>
-        <p>Nettsiden publiseres og leveres med en grundig gjennomgang. Du forlater prosessen med full kontroll og alle tilganger.</p>
-      </div>
+
     </div>
   </div>
 </section>
