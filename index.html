@@ -54,7 +54,10 @@
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
     <p class="hero-brand">Haukenes Technologies</p>
-    <h1 class="hero-title">Ny nettside til<br>bedriften din?</h1>
+    <div class="hero-typing-wrap">
+      <span class="hero-typing" id="hero-typing">Enkel nettside til din bedrift?</span>
+    </div>
+    <h1 class="hero-title">Ny nettside til bedriften din?</h1>
     <p class="hero-sub">
       Enkle og profesjonelle nettsider for små bedrifter – laget raskt, ryddig og uten unødvendig kompleksitet.
     </p>
@@ -444,6 +447,27 @@
 </footer>
 
 <script>
+  const typingPhrases = [
+    'Enkel nettside til din bedrift?',
+    'Ny restaurantside?',
+    'Nettbutikk?',
+    'Landingsside?',
+    'Booking eller kontaktskjema?',
+    'Ny nettside til selskapet ditt?',
+  ];
+  let typingIdx = 0;
+  const typingEl = document.getElementById('hero-typing');
+  if (typingEl) {
+    setInterval(() => {
+      typingEl.classList.add('is-hidden');
+      setTimeout(() => {
+        typingIdx = (typingIdx + 1) % typingPhrases.length;
+        typingEl.textContent = typingPhrases[typingIdx];
+        typingEl.classList.remove('is-hidden');
+      }, 560);
+    }, 3800);
+  }
+
   const heroVideos = Array.from(document.querySelectorAll('.hero-video'));
   let currentVideo = 0;
   heroVideos.forEach(vid => {
