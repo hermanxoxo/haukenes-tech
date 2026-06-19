@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontakt – Haukenes Technologies</title>
-  <meta name="description" content="Ta kontakt med Haukenes Technologies. Send en uforpliktende e-post, så svarer vi raskt." />
+  <meta name="description" content="Ta kontakt med Haukenes Technologies. Send en uforpliktende e-post, så svarer jeg raskt." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="public/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230F1C15'/><text x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23F2EDE3'>H</text></svg>">
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   <div class="container">
     <p class="section-label">Kom i gang</p>
     <h1>Ta kontakt</h1>
-    <p>Ingen forpliktelser. Fortell oss litt om hva du trenger, så svarer vi raskt.</p>
+    <p>Ingen forpliktelser. Fortell litt om hva du trenger, så svarer jeg raskt.</p>
   </div>
 </div>
 
@@ -43,11 +44,12 @@
 <section id="contact">
   <div class="container">
     <p class="section-label">Kom i gang</p>
-    <h2>Har du en idé til en nettside<br>eller digital løsning?</h2>
-    <p class="lead">Send en uforpliktende henvendelse, så finner vi ut hva som passer best for deg.</p>
-    <div class="contact-grid">
+    <div class="contact-grid contact-page-grid">
+
       <div class="contact-left">
-        <p>Du trenger ikke ha alt klart. Skriv kort hvem du er, hva du vurderer og hvilken pakke du tror passer best.</p>
+        <h2>Fortell kort hva du trenger</h2>
+        <p class="contact-lead">Har du en idé til en nettside eller en enkel digital løsning? Send en uforpliktende henvendelse, så finner jeg ut hva som passer best.</p>
+        <p class="contact-helper">Du trenger ikke ha alt klart. Skriv kort hvem du er, hva du vurderer og hvilken pakke du tror passer best.</p>
         <div class="contact-detail">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
@@ -60,8 +62,11 @@
           </svg>
           <a href="tel:+4746784120">46 78 41 20</a>
         </div>
-        <!-- Sett inn form action når form-handler er klar (f.eks. Formspree: action="https://formspree.io/f/din-id") -->
-        <form class="contact-form" action="mailto:post@haukenestechnologies.no" method="POST" enctype="text/plain">
+      </div>
+
+      <div class="contact-form-panel">
+        <!-- TODO: Bytt REPLACE_ME med din Formspree ID (formspree.io/f/<ID>) -->
+        <form class="contact-form" action="https://formspree.io/f/REPLACE_ME" method="POST">
           <div class="form-group">
             <label for="knt-name">Hvem er du?</label>
             <input type="text" id="knt-name" name="name" placeholder="Navn eller bedrift" autocomplete="name" />
@@ -86,31 +91,9 @@
           </div>
           <button type="submit" class="contact-submit">Send henvendelse</button>
         </form>
+        <p class="form-note">Skjemaet kobles til en form-handler før publisering. Du kan også nå meg direkte på <a href="mailto:post@haukenestechnologies.no">post@haukenestechnologies.no</a></p>
       </div>
-      <div class="contact-monitor">
-        <svg viewBox="0 0 340 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="10" y="8" width="320" height="210" rx="10" fill="#0A140E" stroke="#A87556" stroke-width="1.5"/>
-          <rect x="22" y="20" width="296" height="186" rx="5" fill="#060F0A"/>
-          <rect x="32" y="30" width="276" height="22" rx="4" fill="#0F1C15"/>
-          <circle cx="46" cy="41" r="3.5" fill="#A87556" opacity="0.45"/>
-          <circle cx="59" cy="41" r="3.5" fill="#A87556" opacity="0.28"/>
-          <circle cx="72" cy="41" r="3.5" fill="#A87556" opacity="0.16"/>
-          <rect x="86" y="37" width="170" height="8" rx="4" fill="#F2EDE3" opacity="0.07"/>
-          <rect x="32" y="62" width="276" height="94" rx="3" fill="#0F1C15"/>
-          <rect x="52" y="82" width="148" height="9" rx="4" fill="#F2EDE3" opacity="0.55"/>
-          <rect x="52" y="99" width="108" height="9" rx="4" fill="#F2EDE3" opacity="0.3"/>
-          <rect x="52" y="120" width="76" height="20" rx="4" fill="#A87556" opacity="0.75"/>
-          <rect x="32" y="166" width="82" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
-          <rect x="32" y="179" width="60" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
-          <rect x="130" y="166" width="82" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
-          <rect x="130" y="179" width="60" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
-          <rect x="228" y="166" width="80" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
-          <rect x="228" y="179" width="55" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
-          <circle cx="170" cy="212" r="2.5" fill="#A87556" opacity="0.85"/>
-          <rect x="153" y="218" width="34" height="42" rx="2" fill="#0A140E"/>
-          <rect x="103" y="257" width="134" height="13" rx="6" fill="#0A140E" stroke="#A87556" stroke-width="1.2"/>
-        </svg>
-      </div>
+
     </div>
   </div>
 </section>
