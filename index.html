@@ -490,18 +490,75 @@
     setTimeout(tick, 1200);
   }());
 
-  const heroVideos = Array.from(document.querySelectorAll('.hero-video'));
-  let currentVideo = 0;
-  heroVideos.forEach(vid => {
-    vid.addEventListener('ended', () => {
-      heroVideos[currentVideo].classList.remove('active');
-      currentVideo = (currentVideo + 1) % heroVideos.length;
-      const next = heroVideos[currentVideo];
+  (function () {
+    var vids = Array.from(document.querySelectorAll('.hero-video'));
+    if (!vids.length) return;
+    var cur = 0, busy = false;
+    var PREWARM = 2.2; // seconds before end: start next video invisibly
+    var FADE    = 1.0; // seconds before end: begin crossfade
+    var prewarmed = new Set();
+
+    function nextIdx() { return (cur + 1) % vids.length; }
+
+    function prewarm() {
+      var next = vids[nextIdx()];
+      if (prewarmed.has(next)) return;
+      prewarmed.add(next);
       next.currentTime = 0;
-      next.play();
-      next.classList.add('active');
+      var p = next.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    function transition() {
+      if (busy) return;
+      busy = true;
+      var curr = vids[cur];
+      var next = vids[nextIdx()];
+
+      function swap() {
+        curr.classList.remove('active');
+        next.classList.add('active');
+        setTimeout(function () {
+          curr.pause();
+          curr.currentTime = 0;
+          prewarmed.delete(curr);
+          cur = nextIdx();
+          busy = false;
+        }, 1600); // slightly longer than CSS transition (1.4s)
+      }
+
+      // If already playing and buffered, crossfade immediately
+      if (!next.paused && next.readyState >= 3) {
+        swap();
+      } else {
+        function onPlaying() {
+          next.removeEventListener('playing', onPlaying);
+          swap();
+        }
+        next.addEventListener('playing', onPlaying);
+        var p = next.play();
+        if (p && p.catch) {
+          p.catch(function () {
+            next.removeEventListener('playing', onPlaying);
+            swap(); // fade anyway rather than show blank
+          });
+        }
+      }
+    }
+
+    vids.forEach(function (vid, i) {
+      vid.addEventListener('timeupdate', function () {
+        if (i !== cur || busy) return;
+        var rem = vid.duration - vid.currentTime;
+        if (isNaN(rem)) return;
+        if (rem <= PREWARM) prewarm();
+        if (rem <= FADE)    transition();
+      });
+      vid.addEventListener('ended', function () {
+        if (i === cur && !busy) transition();
+      });
     });
-  });
+  }());
 
   const nav = document.getElementById('main-nav');
   const updateNav = () => nav.classList.toggle('scrolled', window.scrollY > 60);
