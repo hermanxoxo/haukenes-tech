@@ -811,8 +811,8 @@ footer a:hover { text-decoration: underline; }
 
   /* Hero video: per-video focal point on portrait screens */
   .hero-video        { object-position: center 30%; }
-  .hero-video--h2    { object-position: 88% center; }
-  .hero-video--h3-4  { object-position: 8% center; }
+  .hero-video--h2    { object-position: 100% center; }
+  .hero-video--h3-4  { object-position: 0% center; }
 
   /* Darker overlay on mobile — stable and controlled regardless of video frame */
   .hero-overlay {
@@ -836,16 +836,18 @@ footer a:hover { text-decoration: underline; }
   /* Hero: pad bottom so content floats up from Safari UI bar */
   #hero { padding-bottom: max(3.5rem, env(safe-area-inset-bottom)); }
 
-  /* Typing text: fix cut-off on narrow phones */
-  .hero-typing-wrap { height: auto; min-height: 1.6rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
-  .hero-typing { font-size: 0.68rem; letter-spacing: 0.1em; white-space: normal; line-height: 1.5; }
+  /* Typing text: hide on mobile — static hero-title takes over */
+  .hero-typing-wrap { display: none; }
 
   /* Scroll indicator: hides into Safari bottom bar — remove on mobile */
   .scroll-hint { display: none; }
 
-  /* Anchor scroll: compensate for fixed nav (~65px) on mobile */
+  /* Anchor scroll: compensate for fixed nav on mobile */
   html { scroll-padding-top: 68px; }
-  #priser { scroll-margin-top: 68px; padding-bottom: max(5rem, calc(env(safe-area-inset-bottom) + 4rem)); }
+  #services, #process, #priser, #pricing, #handover, #contact {
+    scroll-margin-top: 68px;
+  }
+  #priser { padding-bottom: max(5rem, calc(env(safe-area-inset-bottom) + 4rem)); }
 
   /* Insight box: tighter on mobile */
   .insight-box { padding: 1.1rem 1.3rem; gap: 1rem; }
