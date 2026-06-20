@@ -34,7 +34,7 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="/">Hjem</a></li>
-    <li><a href="priser.html">Priser</a></li>
+    <li><a href="#priser">Priser</a></li>
     <li><a href="om.html">Om</a></li>
     <li><a href="kontakt.html">Kontakt</a></li>
     <li class="nav-cta-item">
@@ -46,11 +46,11 @@
 
 <!-- HERO -->
 <section id="hero">
-  <video class="hero-video active" src="public/assets/H2_video.mp4"
+  <video class="hero-video hero-video--h2 active" src="public/assets/H2_video.mp4"
     autoplay muted playsinline webkit-playsinline preload="auto" aria-hidden="true"></video>
-  <video class="hero-video" src="public/assets/H3_video.mp4"
+  <video class="hero-video hero-video--h3-4" src="public/assets/H3_video.mp4"
     muted playsinline preload="auto" aria-hidden="true"></video>
-  <video class="hero-video" src="public/assets/H4_video.mp4"
+  <video class="hero-video hero-video--h3-4" src="public/assets/H4_video.mp4"
     muted playsinline preload="auto" aria-hidden="true"></video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
@@ -64,7 +64,7 @@
     </p>
     <div class="hero-cta">
       <a href="mailto:post@haukenestechnologies.no" class="btn-primary">Kom i gang</a>
-      <a href="priser.html" class="btn-outline-light">Se priser</a>
+      <a href="#priser" class="btn-outline-light">Se priser</a>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true">Scroll</div>
@@ -75,91 +75,112 @@
   <div class="container">
     <p class="section-label">Hva du får</p>
     <h2>Verdi for bedriften din</h2>
-    <p class="lead">En moderne nettside gjør det enklere for kundene å forstå hva du tilbyr, ta kontakt og få tillit til bedriften din.</p>
-    <div class="value-grid">
-
-      <div class="value-card">
-        <svg class="value-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="4" y="8" width="44" height="30" rx="3"/>
-          <line x1="14" y1="38" x2="38" y2="38"/>
-          <line x1="22" y1="44" x2="30" y2="44"/>
-          <line x1="13" y1="44" x2="39" y2="44" stroke-opacity="0.2"/>
-          <rect x="10" y="14" width="20" height="3" rx="1.5" stroke-opacity="0.55"/>
-          <rect x="10" y="20" width="14" height="2.5" rx="1.25" stroke-opacity="0.35"/>
-          <rect x="10" y="27" width="12" height="7" rx="1.5" fill="currentColor" fill-opacity="0.12"/>
-          <rect x="24" y="27" width="12" height="7" rx="1.5" fill="currentColor" fill-opacity="0.12"/>
-          <rect x="38" y="14" width="8" height="6" rx="1.5" fill="currentColor" fill-opacity="0.18"/>
-        </svg>
+    <p class="lead">En tydelig nettside gjør det enklere for kundene å forstå hva du tilbyr, ta kontakt og få tillit til bedriften din.</p>
+    <div class="value-items">
+      <div class="value-item">
+        <span class="value-num">01</span>
         <h3>Ny nettside</h3>
         <p>En ryddig og profesjonell nettside som viser hvem du er, hva du tilbyr og hvorfor kunden bør velge deg.</p>
       </div>
-
-      <div class="value-card">
-        <svg class="value-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M8 12h36a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H28l-6 6v-6H8a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z"/>
-          <line x1="14" y1="21" x2="30" y2="21" stroke-opacity="0.5"/>
-          <line x1="14" y1="27" x2="24" y2="27" stroke-opacity="0.35"/>
-          <circle cx="38" cy="21" r="3" fill="currentColor" fill-opacity="0.15"/>
-        </svg>
+      <div class="value-item">
+        <span class="value-num">02</span>
         <h3>Enklere kontakt</h3>
         <p>Gjør det lett for kunder å ta kontakt, sende forespørsel eller finne riktig informasjon.</p>
       </div>
-
-      <div class="value-card">
-        <svg class="value-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M26 6 L30 18 H44 L33 26 L37 38 L26 30 L15 38 L19 26 L8 18 H22 Z" fill="currentColor" fill-opacity="0.08"/>
-          <path d="M26 6 L30 18 H44 L33 26 L37 38 L26 30 L15 38 L19 26 L8 18 H22 Z"/>
-          <polyline points="19,27 23,31 33,21" stroke-width="1.6" stroke-opacity="0.7"/>
-        </svg>
+      <div class="value-item">
+        <span class="value-num">03</span>
         <h3>Mer tillit</h3>
         <p>Et godt førsteinntrykk gjør at bedriften oppleves mer seriøs, oppdatert og trygg å velge.</p>
       </div>
-
-      <div class="value-card">
-        <svg class="value-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="10" y="6" width="26" height="34" rx="2"/>
-          <polyline points="36 6 42 6 42 46 10 46 10 40"/>
-          <line x1="16" y1="15" x2="30" y2="15" stroke-opacity="0.55"/>
-          <line x1="16" y1="21" x2="30" y2="21" stroke-opacity="0.35"/>
-          <line x1="16" y1="27" x2="24" y2="27" stroke-opacity="0.25"/>
-          <circle cx="34" cy="36" r="7" fill="currentColor" fill-opacity="0.1"/>
-          <line x1="31" y1="36" x2="37" y2="36" stroke-opacity="0.6"/>
-          <line x1="34" y1="33" x2="34" y2="39" stroke-opacity="0.6"/>
-        </svg>
+      <div class="value-item">
+        <span class="value-num">04</span>
         <h3>Klart innhold</h3>
-        <p>Jeg hjelper med struktur, tekst og innhold, slik at kundene dine raskt forstår hva du tilbyr.</p>
+        <p>Jeg hjelper med struktur, tekst og innhold, slik at kundene raskt forstår hva du tilbyr.</p>
       </div>
-
+    </div>
+    <div class="insight-box">
+      <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <circle cx="12" cy="16" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+      <div>
+        <p class="insight-title">Visste du at <strong>46 %</strong> vurderer troverdighet ut fra designinntrykket?</p>
+        <p class="insight-body">Et godt design handler ikke bare om utseende, men også om tillit. En tydelig og profesjonell nettside kan gjøre det enklere for kunder å føle seg trygge på bedriften din.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRICE TEASER -->
-<section id="price-teaser">
+<!-- PRISER -->
+<section id="priser">
   <div class="container">
     <p class="section-label">Pakker og priser</p>
-    <h2>Enkle pakker fra 4 000 kr</h2>
-    <p class="lead">Prisene under gir en enkel pekepinn. Endelig pris avtales ut fra behov, innhold og omfang.</p>
-    <div class="price-row">
-      <div class="price-row-item">
-        <div class="pri-name">Enkel nettside</div>
-        <div class="pri-price">fra <strong>4 000</strong> kr</div>
-        <p class="pri-desc">For mindre bedrifter som trenger en ryddig og enkel nettside med det viktigste på plass.</p>
+    <h2>Hva koster det?</h2>
+    <p class="lead">Enkle og tydelige pakker. Velg det som passer behovet ditt, og ta kontakt for en uforpliktende prat.</p>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <h3>Enkel nettside</h3>
+        <p class="price-for">Passer for små bedrifter som trenger en enkel digital tilstedeværelse med det viktigste på plass.</p>
+        <div class="price-amount">fra <strong>4 000</strong> kr</div>
+        <p class="price-note">Veiledende pris ekskl. mva.</p>
+        <ul class="price-features">
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Én side eller landingsside</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kort presentasjon av bedriften</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kontaktinformasjon og mobiltilpasning</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Grunnleggende struktur og teksthjelp</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Publisering og enkel overlevering</li>
+        </ul>
+        <p class="price-disclaimer">Domene og hosting kjøpes separat. Endelig pris avhenger av behov og innhold.</p>
+        <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Kom i gang</a>
       </div>
-      <div class="price-row-item featured">
-        <div class="pri-name">Komplett nettside <span class="pri-badge">Anbefalt</span></div>
-        <div class="pri-price">fra <strong>5 500</strong> kr</div>
-        <p class="pri-desc">For bedrifter som ønsker flere undersider, tydeligere struktur og mer innhold.</p>
+
+      <div class="price-card featured">
+        <p class="featured-label">Anbefalt</p>
+        <h3>Komplett nettside</h3>
+        <p class="price-for">Passer for bedrifter som trenger en mer komplett presentasjon med tydeligere struktur og mer innhold.</p>
+        <div class="price-amount">fra <strong>5 500</strong> kr</div>
+        <p class="price-note">Veiledende pris ekskl. mva.</p>
+        <ul class="price-features">
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flere seksjoner eller undersider</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tydeligere struktur på tjenester</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hjelp med tekst og innhold</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kontaktskjema og tydelig kontaktflate</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Domenehjelp, publisering og overlevering</li>
+        </ul>
+        <p class="price-disclaimer">Domene og hosting kjøpes separat. Endelig pris avhenger av behov og innhold.</p>
+        <a href="mailto:post@haukenestechnologies.no" class="btn-primary">Kom i gang</a>
       </div>
-      <div class="price-row-item">
-        <div class="pri-name">Premium løsning</div>
-        <div class="pri-price">fra <strong>8 500</strong> kr</div>
-        <p class="pri-desc">For bedrifter som trenger en mer tilpasset løsning, flere seksjoner og mer hjelp med innhold og oppsett.</p>
+
+      <div class="price-card">
+        <h3>Premium løsning</h3>
+        <p class="price-for">Passer for bedrifter som ønsker en mer tilpasset og gjennomarbeidet nettside med ekstra hjelp.</p>
+        <div class="price-amount">fra <strong>8 500</strong> kr</div>
+        <p class="price-note">Veiledende pris ekskl. mva.</p>
+        <ul class="price-features">
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mer skreddersydd oppsett</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flere sider og seksjoner</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mer arbeid med innhold og struktur</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visuell tilpasning og detaljer</li>
+          <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dokumentasjon og grundigere overlevering</li>
+        </ul>
+        <p class="price-disclaimer">Endelig pris avtales etter behov og omfang.</p>
+        <a href="mailto:post@haukenestechnologies.no" class="btn-outline">Ta kontakt</a>
       </div>
+
     </div>
-    <p class="price-row-note">Prisene er veiledende og ekskl. mva. Endelig pris avtales etter behov og omfang.</p>
-    <div class="price-teaser-cta">
-      <a href="priser.html" class="btn-outline">Se pakker og priser &rarr;</a>
+
+    <div class="domain-box">
+      <svg class="domain-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <div>
+        <h4>Hva med domene?</h4>
+        <p>Domene kjøpes separat, for eksempel gjennom Domeneshop. Jeg kan hjelpe med kjøp og oppsett av domene dersom du ikke har dette fra før. Har du allerede et domene, kobler jeg nettsiden til eksisterende domene uten ekstra kostnad.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -168,8 +189,8 @@
 <section id="process">
   <div class="container">
     <p class="section-label">Slik jobber jeg</p>
-    <h2>Fra første utkast til ferdig nettside</h2>
-    <p class="lead">Prosessen er enkel og ryddig. Du får først et utkast, deretter en forbedret versjon basert på dine tilbakemeldinger, før siden ferdigstilles og leveres.</p>
+    <h2>Fra første møte til ferdig nettside</h2>
+    <p class="lead">Jeg jobber i tre enkle steg: bronse, sølv og gull. Underveis får du se utkast, komme med tilbakemeldinger og gi innspill, slik at nettsiden blir ferdigstilt og levert på en ryddig måte.</p>
 
     <div class="tier-grid">
 
@@ -207,10 +228,10 @@
           <rect x="126" y="176" width="28" height="28" rx="2" fill="#0A0806"/>
           <rect x="88" y="202" width="104" height="11" rx="5" fill="#0A0806" stroke="#9E6B3A" stroke-width="1" opacity="0.7"/>
         </svg>
-        <span class="tier-badge">Steg 1</span>
+        <span class="tier-badge">Bronse</span>
         <div class="tier-info">
-          <h3>Første utkast</h3>
-          <p>Jeg lager et første utkast basert på samtaler, tilsendte bilder og ønskede farger. Målet er å gi deg et konkret utgangspunkt å vurdere.</p>
+          <h3>Første møte</h3>
+          <p>Vi går gjennom behov, innhold og ønsket uttrykk. Du deler tanker, inspirasjon og det viktigste du vil ha med. Målet er å gi et godt utgangspunkt for første utkast.</p>
         </div>
       </div>
 
@@ -256,10 +277,10 @@
           <rect x="126" y="176" width="28" height="28" rx="2" fill="#080D0C"/>
           <rect x="88" y="202" width="104" height="11" rx="5" fill="#080D0C" stroke="#7A8E88" stroke-width="1" opacity="0.7"/>
         </svg>
-        <span class="tier-badge">Steg 2</span>
+        <span class="tier-badge">Sølv</span>
         <div class="tier-info">
-          <h3>Justert versjon</h3>
-          <p>Jeg lager en ny versjon basert på tilbakemeldingene dine. Struktur, tekst, bilder og visuelt uttrykk justeres slik at siden treffer bedre.</p>
+          <h3>Tilbakemeldinger og justeringer</h3>
+          <p>Du får se utkastet og kommer med tilbakemeldinger og innspill. Struktur, tekst, innhold og visuelle detaljer justeres slik at nettsiden treffer bedre og blir mer i tråd med det du ønsker.</p>
         </div>
       </div>
 
@@ -307,10 +328,10 @@
           <rect x="126" y="176" width="28" height="28" rx="2" fill="#0A0906"/>
           <rect x="88" y="202" width="104" height="11" rx="5" fill="#0A0906" stroke="#9A841E" stroke-width="1" opacity="0.8"/>
         </svg>
-        <span class="tier-badge">Steg 3</span>
+        <span class="tier-badge">Gull</span>
         <div class="tier-info">
-          <h3>Ferdig leveranse</h3>
-          <p>Siste finish gjøres, nettsiden ferdigstilles og klargjøres for publisering. Overlevering og dokumentasjon leveres til deg, og faktura sendes.</p>
+          <h3>Ferdig produkt og leveranse</h3>
+          <p>Nettsiden ferdigstilles og klargjøres for publisering. Du får levert en ferdig løsning, og målet er en ryddig overlevering av et produkt som er klart til bruk.</p>
         </div>
       </div>
 
@@ -369,20 +390,21 @@
     <p class="section-label">Kom i gang</p>
     <h2>Har du en idé til en nettside<br>eller digital løsning?</h2>
     <p class="lead">Send en uforpliktende henvendelse, så finner jeg ut hva som passer best for deg.</p>
-    <div class="contact-grid">
-      <div class="contact-left">
+    <div class="contact-left">
         <p>Du trenger ikke ha alt klart. Skriv kort hvem du er, hva du vurderer og hvilken pakke du tror passer best.</p>
-        <div class="contact-detail">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-          </svg>
-          <a href="mailto:post@haukenestechnologies.no">post@haukenestechnologies.no</a>
-        </div>
-        <div class="contact-detail">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 12 19.79 19.79 0 0 1 1.08 3.42 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          <a href="tel:+4746784120">46 78 41 20</a>
+        <div class="contact-details-inline">
+          <div class="contact-detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a href="mailto:post@haukenestechnologies.no">post@haukenestechnologies.no</a>
+          </div>
+          <div class="contact-detail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.1 12 19.79 19.79 0 0 1 1.08 3.42 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+4746784120">46 78 41 20</a>
+          </div>
         </div>
         <!-- TODO: Bytt REPLACE_ME med din Formspree ID (formspree.io/f/<ID>) -->
         <form class="contact-form" action="https://formspree.io/f/REPLACE_ME" method="POST">
@@ -411,31 +433,6 @@
           <button type="submit" class="contact-submit">Send henvendelse</button>
         </form>
         <p class="form-note">Skjemaet kobles til en form-handler før publisering. Du kan også nå meg direkte på <a href="mailto:post@haukenestechnologies.no">post@haukenestechnologies.no</a></p>
-      </div>
-      <div class="contact-monitor">
-        <svg viewBox="0 0 340 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="10" y="8" width="320" height="210" rx="10" fill="#0A140E" stroke="#A87556" stroke-width="1.5"/>
-          <rect x="22" y="20" width="296" height="186" rx="5" fill="#060F0A"/>
-          <rect x="32" y="30" width="276" height="22" rx="4" fill="#0F1C15"/>
-          <circle cx="46" cy="41" r="3.5" fill="#A87556" opacity="0.45"/>
-          <circle cx="59" cy="41" r="3.5" fill="#A87556" opacity="0.28"/>
-          <circle cx="72" cy="41" r="3.5" fill="#A87556" opacity="0.16"/>
-          <rect x="86" y="37" width="170" height="8" rx="4" fill="#F2EDE3" opacity="0.07"/>
-          <rect x="32" y="62" width="276" height="94" rx="3" fill="#0F1C15"/>
-          <rect x="52" y="82" width="148" height="9" rx="4" fill="#F2EDE3" opacity="0.55"/>
-          <rect x="52" y="99" width="108" height="9" rx="4" fill="#F2EDE3" opacity="0.3"/>
-          <rect x="52" y="120" width="76" height="20" rx="4" fill="#A87556" opacity="0.75"/>
-          <rect x="32" y="166" width="82" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
-          <rect x="32" y="179" width="60" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
-          <rect x="130" y="166" width="82" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
-          <rect x="130" y="179" width="60" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
-          <rect x="228" y="166" width="80" height="7" rx="3" fill="#F2EDE3" opacity="0.13"/>
-          <rect x="228" y="179" width="55" height="7" rx="3" fill="#F2EDE3" opacity="0.08"/>
-          <circle cx="170" cy="212" r="2.5" fill="#A87556" opacity="0.85"/>
-          <rect x="153" y="218" width="34" height="42" rx="2" fill="#0A140E"/>
-          <rect x="103" y="257" width="134" height="13" rx="6" fill="#0A140E" stroke="#A87556" stroke-width="1.2"/>
-        </svg>
-      </div>
     </div>
   </div>
 </section>
