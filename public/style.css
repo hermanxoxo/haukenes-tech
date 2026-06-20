@@ -811,8 +811,8 @@ footer a:hover { text-decoration: underline; }
 
   /* Hero video: per-video focal point on portrait screens */
   .hero-video        { object-position: center 30%; }
-  .hero-video--h2    { object-position: 72% center; }
-  .hero-video--h3-4  { object-position: 18% center; }
+  .hero-video--h2    { object-position: 88% center; }
+  .hero-video--h3-4  { object-position: 8% center; }
 
   /* Darker overlay on mobile — stable and controlled regardless of video frame */
   .hero-overlay {
@@ -832,10 +832,29 @@ footer a:hover { text-decoration: underline; }
   .hero-title { white-space: normal; }
   .hero-cta { flex-direction: column; align-items: center; }
   .hero-cta a { width: 100%; max-width: 260px; text-align: center; }
+
+  /* Hero: pad bottom so content floats up from Safari UI bar */
+  #hero { padding-bottom: max(3.5rem, env(safe-area-inset-bottom)); }
+
+  /* Typing text: fix cut-off on narrow phones */
+  .hero-typing-wrap { height: auto; min-height: 1.6rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  .hero-typing { font-size: 0.68rem; letter-spacing: 0.1em; white-space: normal; line-height: 1.5; }
+
+  /* Scroll indicator: hides into Safari bottom bar — remove on mobile */
+  .scroll-hint { display: none; }
+
+  /* Anchor scroll: compensate for fixed nav (~65px) on mobile */
+  html { scroll-padding-top: 68px; }
+  #priser { scroll-margin-top: 68px; padding-bottom: max(5rem, calc(env(safe-area-inset-bottom) + 4rem)); }
+
+  /* Insight box: tighter on mobile */
+  .insight-box { padding: 1.1rem 1.3rem; gap: 1rem; }
+  .insight-icon { width: 20px; height: 20px; }
 }
 
 @media (max-width: 480px) {
-  .value-items { grid-template-columns: 1fr; }
+  .value-items { grid-template-columns: 1fr; gap: 0.85rem; }
+  .value-item { padding: 1.2rem 1.2rem; }
   .process-steps { grid-template-columns: 1fr; }
   .domain-box { flex-direction: column; gap: 1rem; }
 }
