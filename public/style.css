@@ -613,7 +613,7 @@ h2 {
 .about-text p { margin-bottom: 1.1rem; color: var(--muted); }
 .about-text p:last-of-type { margin-bottom: 1.6rem; }
 .about-linkedin {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.45rem;
   color: var(--muted);
