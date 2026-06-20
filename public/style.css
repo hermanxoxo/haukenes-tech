@@ -609,9 +609,18 @@ h2 {
 #about { background: var(--beige); }
 .about-grid { display: grid; grid-template-columns: 380px 1fr; gap: 5rem; align-items: center; }
 .about-img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center top; border-radius: 4px; display: block; }
-.about-text h2 { margin-bottom: 1.4rem; }
+.about-text h2 { margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.7rem; }
 .about-text p { margin-bottom: 1.1rem; color: var(--muted); }
 .about-text p:last-of-type { margin-bottom: 2rem; }
+.about-linkedin {
+  color: var(--muted);
+  opacity: 0.55;
+  transition: opacity 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.about-linkedin:hover { color: #0A66C2; opacity: 1; }
 
 /* ── CONTACT ──────────────────────────────────── */
 #contact { background: var(--navy); padding: 5rem 1.5rem 5.5rem; }
